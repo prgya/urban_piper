@@ -8,6 +8,11 @@ https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/
 """
 
 import os
+import sys
+#sys.path.append('/home/prgya/api')
+sys.path.append('/home/prgya/prgya.pythonanywhere.com/api')
+
+from hackernews import apps as application
 
 from django.core.wsgi import get_wsgi_application
 
