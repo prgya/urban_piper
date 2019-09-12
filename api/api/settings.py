@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*$%x5!nv+^t@fo!4wv!)-x^2*@xd=x5redg+78pmmu4=pw071o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['prgya.pythonanywhere.com']
 
 
 # Application definition
@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'api.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -84,8 +84,17 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
+}'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'prgya$default',
+        'USER': 'prgya',
+        'PASSWORD': 'mini@1234',
+        'HOST': 'prgya.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
+    }
 }
-
 
 '''
 DATABASES = {
@@ -133,3 +142,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
