@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,re_path,include
-
+from hackernews.views import search
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/search',search),
     re_path('api/(?P<version>(v1|v2))/', include('hackernews.urls'))
     #path('', include('hackernews.urls'))
 ]
