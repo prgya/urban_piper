@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>search</title>
+</head>
+<body>
+<form method="get">
+<input type="text" name="searched_text" placeholder="search"></input>
+<button type="submit">Search</button>
+</form>
+  {% if flag == 0 %}
+  {{ pass }}
+  
+
+  {% elif flag == 1 %}
+  
+  <p><strong>Result: <br>
+      The article {{ fetched_detail.title }} with story id {{ fetched_detail.story_id }}  posted by {{ fetched_detail.username }} was computed {{ fetched_detail.sentiment }} in the sentiment analysis. </strong> </p>
+  {% elif flag == -1 %}
+     <p><strong>No Result found</strong></p>
+    {% endif %}
+
+</body>
+</html>
+
+
